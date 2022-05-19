@@ -1,0 +1,41 @@
+version: "3"
+services:
+  meetups-frontend:
+    image: yashgangwar123/meetups-frontend:latest
+    stdin_open: true
+    ports: 
+      - "3000:3000"
+    networks:
+      - meetups-app
+  meetups-backend:
+    image: yashgangwar123/meetups-backend:latest
+    ports:
+      - "8000:8000"
+    networks:
+      - meetups-app
+    depends_on:
+      - cassandra
+  cassandra:
+    image: cassandra:latest
+    ports:
+      - "9042:9042"
+    environment:
+      CASSANDRA_USE_ASTRA: "false" 
+      CASSANDRA_USER: "admin" 
+      CASSANDRA_PASSWORD: "admin" 
+      CASSANDRA_LOCAL_DC: "datacenter1" 
+      CASSANDRA_CONTACT_POINTS: "db:9042"
+      CASSANDRA_KEYSPACE_CQL: "CREATE KEYSPACE test_keyspace WITH REPLICATION = {'class':'SimpleStrategy','replication_factor':1};" 
+      MONITORING_PROMETHEUS: "false"
+      MONITORING_GRAFANA: "false"
+      DISTRIBUTED_TRACING_ENABLED: "false"
+    networks:
+      - meetups-app
+    volumes:
+      - cassandra-data:/data/db
+networks:
+  meetups-app:
+    driver: bridge
+volumes:
+  cassandra-data:
+    driver: local
