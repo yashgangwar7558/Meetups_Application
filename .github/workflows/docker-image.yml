@@ -34,10 +34,10 @@ jobs:
     needs: changes
     if: ${{ needs.changes.outputs.meetups-backend == 'true' }}
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        # meetups-backend folder working directory.
-        working-directory: meetups-backend
+#     defaults:
+#       run:
+#         # meetups-backend folder working directory.
+#         working-directory: meetups-backend
     steps:
       - uses: actions/checkout@v2
       -
@@ -57,7 +57,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v3
         with:
-          context: ./meetups-backend
+          context: "{{defaultContext}}:meetups-backend"
           push: true
           tags: yashgangwar123/meetups-backend:latest-from-github-action
  
@@ -66,10 +66,10 @@ jobs:
     needs: changes
     if: ${{ needs.changes.outputs.meetups-frontend == 'true' }}
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        # meetups-frontend folder working directory.
-        working-directory: meetups-frontend
+#     defaults:
+#       run:
+#         # meetups-frontend folder working directory.
+#         working-directory: meetups-frontend
     steps:
       - uses: actions/checkout@v2
       -
@@ -89,6 +89,6 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v3
         with:
-          context: ./meetups-frontned
+          context: "{{defaultContext}}:meetups-frontend"
           push: true
           tags: yashgangwar123/meetups-frontend:latest-from-github-action
