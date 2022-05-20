@@ -15,7 +15,7 @@ var models = ExpressCassandra.createClient({
         contactPoints: ['cassandra'],   // 127.0.0.1
         localDataCenter: 'datacenter1',
         protocolOptions: { port: 9042 },
-        keyspace: 'testks',
+        keyspace: 'test-ks',
         queryOptions: { consistency: ExpressCassandra.consistencies.one }
         // socketOptions: { readTimeout: 60000 },
         // authProvider: new cassandra.auth.PlainTextAuthProvider('dok-k8ssandra-superuser', 'ZglH3dt8jU2YzoetgXzR')
