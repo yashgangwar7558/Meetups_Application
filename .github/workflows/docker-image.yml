@@ -17,6 +17,7 @@ jobs:
       meetups-frontend: ${{ steps.filter.outputs.meetups-frontend }}
     steps:
     # For pull requests it's not necessary to checkout the code
+    - uses: actions/checkout@v2
     - uses: dorny/paths-filter@v2
       id: filter
       with:
@@ -30,26 +31,25 @@ jobs:
     needs: changes
     if: ${{ needs.changes.outputs.meetups-backend == 'true' }}
     runs-on: ubuntu-latest
-#     defaults:
-#       run:
-#       # meetups-backend folder working directory.
-#         working-directory: meetups-backend
+    defaults:
+      run:
+        # meetups-backend folder working directory.
+        working-directory: meetups-backend
     steps:
 #     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag meetups-backend:$(date +%s)
-      working-directory: meetups-backend
+ 
       
   meetups-frontend:
     needs: changes
     if: ${{ needs.changes.outputs.meetups-frontend == 'true' }}
     runs-on: ubuntu-latest
-#     defaults:
-#       run:
-#       # meetups-frontend folder working directory.
-#         working-directory: meetups-frontend
+    defaults:
+      run:
+        # meetups-frontend folder working directory.
+        working-directory: meetups-frontend
     steps:
 #     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag meetups-frontend:$(date +%s)
-      working-directory: meetups-frontend
