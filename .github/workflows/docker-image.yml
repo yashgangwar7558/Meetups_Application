@@ -36,7 +36,7 @@ jobs:
         # meetups-backend folder working directory.
         working-directory: meetups-backend
     steps:
-#     - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag meetups-backend:$(date +%s)
  
@@ -50,6 +50,6 @@ jobs:
         # meetups-frontend folder working directory.
         working-directory: meetups-frontend
     steps:
-#     - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag meetups-frontend:$(date +%s)
