@@ -6,11 +6,11 @@
 - [About the Project](#about-the-project)
   - [Technologies Used](#technologies-used)
   - [Components](#components)
-  - [Learnings from the project](#things-i-got-to-learn-developing-this-project)
 - [How to use project locally](#how-to-use-project-locally)
   - [Prerequisites](#prerequisites)
-  - [Clone repo locally](#clone-repo-locally)
+  - [Clone Repository locally](#clone-repository+-locally)
   - [Deploy on Docker](#deploy-on-docker)
+  - [Access Cassandra on CLI](#access-cassandra-on-cli)
 - [Github Actions & Workflows](#github-actions-&-workflows)
 - [Future plans with the project](#future-plans-with-the-project)
 
@@ -44,8 +44,23 @@ This is a proper full stack project which has a proper frontend, backend with en
    
 - **To Devopsify**
    - Docker
-   - Kubernets
+   - Kubernetes
    - Github actions/workflows
    
 ## Components
+
+  1. **Frontend**
+  2. **Backend**
+  3. **Database**
+
+## How to use project locally
+
+### Prerequisites
+
+### Clone Repository Locally
+
+### Deploy on Docker
+
+### Access Cassandra on CLI
+
 
