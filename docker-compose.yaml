@@ -1,14 +1,14 @@
 version: "3"
 services:
   meetups-frontend:
-    image: yashgangwar123/meetups-frontend:latest
+    image: yashgangwar123/meetups-frontend:latest-from-github-action
     stdin_open: true
     ports: 
       - "3000:3000"
     networks:
       - meetups-app
   meetups-backend:
-    image: yashgangwar123/meetups-backend:latest
+    image: yashgangwar123/meetups-backend:latest-from-github-action
     ports:
       - "8000:8000"
     networks:
