@@ -11,7 +11,7 @@
   - [Clone Repository locally](#clone-repository-locally)
   - [Deploy on Docker](#deploy-on-docker)
   - [Access Cassandra on CLI](#access-cassandra-on-cli)
-- [Github Actions & Workflows](#github-actions-&-workflows)
+- [Github Actions](#github-actions)
 - [Future plans with the project](#future-plans-with-the-project)
 
 </details>
@@ -160,6 +160,15 @@ Before proceeding further we need to have some tools and CLI installed locally:
     Similarly, you can perform other CQL queries on the table. [Study more](https://www.tutorialspoint.com/cassandra/cassandra_cqlsh.htm).
     
  
- # Github Actions & Workflows
+ # Github Actions
  
  # Future plans with the project
+ 
+   - [ ] Write kubernetes manifests files like statefulsets.yaml for database, deployments.yaml for frontend & backend, services.yaml for connecting the deployments. All this to deploy whole application on kubernetes cluster.
+   - [ ] Make a Helm chart for the application so that it can deployed on kubernetes with on single command.
+   - [ ] Integrate prometheus and grafana for monitoring.
+   - [ ] Integrate more Github actions that run tests against the code before merging it to the main repo.
+   - [ ] Write unit tests for API endpoints using Jenkins
+   - [ ] Try to deploy kubernetes on cloud kubernetes cluster.
+   - [ ] Try experimenting other cloud native tools as get to learn them.
+   - [ ] much more to be added....
