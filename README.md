@@ -113,6 +113,53 @@ Before proceeding further we need to have some tools and CLI installed locally:
 
 ## Access Cassandra on CLI
 
+1. To access the database/keyspace you can access the shell by using the following command
 
+    ```sh
+    docker exec -it <CASSANDRA_CONTAINER_NAME> /bin/bash
+    cqlsh
+    ```
+    
+2. To get list of all Keyspaces
 
+   Command:
+   ```sh
+   DESCRIBE keyspaces;
+   ```
+   Output:
+   ```sh
+   system       system_distributed  system_traces  system_virtual_schema
+   system_auth  system_schema       system_views   testks
+   ```
+   
+   `testks` is the keyspace for our meetups application.
+   
+ 3. We need to enter into this `testks` Keyspace to access all data/tables of our application
 
+    Command:
+    ```sh
+    USE testks;
+    ```
+ 
+ 4. To get list of all tables inside out keyspace
+
+    Command:
+    ```sh
+    DESCRIBE tables;
+    ```
+    
+    You will be able to see `meetups_by_city` table where all our meetup details are stored.
+    
+5. To see the table data 
+
+    Command:
+    ```sh
+    SELECT * from meetups_by_city;
+    ```
+    
+    Similarly, you can perform other CQL queries on the table. [Study more](https://www.tutorialspoint.com/cassandra/cassandra_cqlsh.htm).
+    
+ 
+ # Github Actions & Workflows
+ 
+ # Future plans with the project
