@@ -11,7 +11,6 @@
   - [Clone Repository locally](#clone-repository-locally)
   - [Deploy on Docker](#deploy-on-docker)
   - [Access Cassandra on CLI](#access-cassandra-on-cli)
-- [Github Actions](#github-actions)
 - [Future plans with the project](#future-plans-with-the-project)
 
 </details>
@@ -161,8 +160,6 @@ Before proceeding further we need to have some tools and CLI installed locally:
     
     Similarly, you can perform other CQL queries on the table. [Study more](https://www.tutorialspoint.com/cassandra/cassandra_cqlsh.htm).
     
- 
- # Github Actions
  
  # Future plans with the project
  
