@@ -28,7 +28,10 @@ jobs:
   meetups-backend:
       needs: changes
       if: ${{ needs.changes.outputs.meetups-backend == 'true' }}
-      runs-on: ubuntu-latest
+      runs-on: ubuntu-latest  
+      defaults:
+        run:
+          working-directory: ./meetups-backend
     
       strategy:
         matrix:
