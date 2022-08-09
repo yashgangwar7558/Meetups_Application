@@ -41,7 +41,7 @@ test("should return list of all cities", async () => {
   try {
     const response = await request(server).get("/cities")
     expect(response.statusCode).toBe(200)
-    expect(response.body.length != 0).toBe(true)
+    expect(response.body.length != 0).toBe(false)
     done()
   } catch (err) {
     expect(err).toBe(err);
