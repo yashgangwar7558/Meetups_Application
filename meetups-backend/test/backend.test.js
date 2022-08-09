@@ -1,9 +1,13 @@
-const app = require('../app');
+const express = require('express');
+const server = require('../app');
 const models = require('../db/conn');
 const request = require('supertest');
 
+
+// To delete the test row created for testing endpoints
 afterAll((done) => {
   models.instance.meetups_by_city.delete({ meetup_city: "testCity" })
+  server.close();
   done()
 })
 
@@ -11,6 +15,8 @@ beforeAll((done) => {
   done()
 })
 
+
+// Test - 1
 test("should sucessfully add a row to database and respond with a 201 status code", async () => {
   const details = {
     title: "test",
@@ -21,7 +27,7 @@ test("should sucessfully add a row to database and respond with a 201 status cod
     description: "Its a test, you can avoid it"
   }
   try {
-    const response = await request(app).post("/add-new-meetup").send(details)
+    const response = await request(server).post("/add-new-meetup").send(details)
     expect(response.statusCode).toBe(201)
     done()
   } catch (err) {
@@ -29,9 +35,11 @@ test("should sucessfully add a row to database and respond with a 201 status cod
   }
 })
 
+
+// Test - 2
 test("should return list of all cities", async () => {
   try {
-    const response = await request(app).get("/cities")
+    const response = await request(server).get("/cities")
     expect(response.statusCode).toBe(200)
     expect(response.body.length != 0).toBe(true)
     done()
@@ -40,9 +48,11 @@ test("should return list of all cities", async () => {
   }
 })
 
+
+// Test - 3
 test("should return all details about testCity meetups", async () => {
   try {
-    const response = await request(app).get("/cities/testCity")
+    const response = await request(server).get("/cities/testCity")
     expect(response.statusCode).toBe(200)
     expect(response.body.length != 0).toBe(true)
     done()

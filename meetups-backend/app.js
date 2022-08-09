@@ -16,11 +16,12 @@ app.get("/hello-world", (req, res) => {
     return res.send("Hello World");
 })
 
-app.listen(PORT, () => {
+var server = app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 })
 
-module.exports = app;
+module.exports = server;
+
 
 
 
