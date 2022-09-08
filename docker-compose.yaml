@@ -37,7 +37,7 @@ services:
     image: containrrr/watchtower
     environment:
       REPO_USER: "yashgangwar123"
-      REPO_PASS: "Yash@7558"
+      REPO_PASS: "Yash@12345"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /root/.docker/config.json:/config.json
