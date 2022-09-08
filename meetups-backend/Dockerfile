@@ -11,4 +11,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD [ "node", "database.js" ]
+CMD [ "node", "app.js" ]
