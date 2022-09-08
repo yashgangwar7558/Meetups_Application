@@ -5,7 +5,7 @@ const express = require('express');
 
 var models = ExpressCassandra.createClient({
     clientOptions: {
-        contactPoints: ['127.0.0.1'],   // cassandra
+        contactPoints: ['cassandra'],   // 127.0.0.1
         localDataCenter: 'datacenter1',
         protocolOptions: { port: 9042 },
         keyspace: 'testks',
