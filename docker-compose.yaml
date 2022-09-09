@@ -2,6 +2,7 @@ version: "3"
 services:
   meetups-frontend:
     image: registry-1.docker.io/yashgangwar123/meetups-frontend:latest-from-github-action
+    restart: on-failure
     stdin_open: true
     ports: 
       - "3000:3000"
@@ -9,6 +10,7 @@ services:
       - meetups-app
   meetups-backend:
     image: registry-1.docker.io/yashgangwar123/meetups-backend:latest-from-github-action
+    restart: on-failure
     ports:
       - "8000:8000"
     networks:
@@ -17,6 +19,7 @@ services:
       - cassandra
   cassandra:
     image: cassandra:latest
+    restart: on-failure
     ports:
       - "9042:9042"
     environment:
@@ -35,9 +38,10 @@ services:
       - cassandra-data:/data/db
   watchtower:
     image: containrrr/watchtower
+    restart: on-failure
     environment:
-      REPO_USER: "yashgangwar123"
-      REPO_PASS: "Yash@12345"
+      REPO_USER: "${REPO_USER}"
+      REPO_PASS: "${REPO_PASS}"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /root/.docker/config.json:/config.json
