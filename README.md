@@ -31,7 +31,7 @@ This is a proper full stack project which has a proper frontend, backend with en
    - HTML
    - CSS
    - Javascript
-   - NextJS framework
+   - ReactJS
    
 - **For Backend**
    - NodeJS
@@ -48,7 +48,7 @@ This is a proper full stack project which has a proper frontend, backend with en
    
 ## Components
 
-  1. **Frontend:** Frontend is made using Javascript and NextJS. This is the directory that includes all the frontend code, it also includes a dockerfile to build the image of the frontend and run as Docker container. There is also a Github action that automatically builds the updated image and pushes to Dockerhub when new code or PR is merged, but what's different is it only gets trigerred when a code is merged in that particular sub-directory i.e meetups-frontend.
+  1. **Frontend:** Frontend is made using ReactJS and CSS. This is the directory that includes all the frontend code, it also includes a dockerfile to build the image of the frontend and run as Docker container. There is also a Github action that automatically builds the updated image and pushes to Dockerhub when new code or PR is merged, but what's different is it only gets trigerred when a code is merged in that particular sub-directory i.e meetups-frontend.
   
   2. **Backend:** Backend is made using NodeJS, ExpressJS and Express-Cassandra, which is a Cassandra ORM/ODM/OGM for NodeJS. This is the directory that includes all the frontend code, it also includes a dockerfile to build the image of the Backend and run as Docker container. There is also a Github action that automatically builds the updated image and pushes to Dockerhub when new code or PR is merged, but what's different is it only gets trigerred when a code is merged in that particular sub-directory i.e meetups-backend.
   
