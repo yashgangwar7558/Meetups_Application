@@ -8,7 +8,7 @@ app = express()
 app.use(cors())
 app.use(express.json())
 
-const PORT = 8000;
+const PORT = 8080;
 
 app.use(router);
 
